@@ -52,8 +52,6 @@ class MainActivity : AppCompatActivity() {
         startForegroundServiceBtn.setOnClickListener {
             //TODO 2
             // Напишите код для запуска ForegroundService
-            val serviceIntent = Intent(this, ForegroundService::class.java)
-            ContextCompat.startForegroundService(this, serviceIntent)
         }
 
         val stopForegroundServiceBtn = findViewById<Button>(R.id.stop_foreground_service_btn)
