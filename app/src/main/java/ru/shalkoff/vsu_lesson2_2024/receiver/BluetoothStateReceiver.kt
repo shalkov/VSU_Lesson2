@@ -6,9 +6,6 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 
-//TODO 4
-// Почему не работает этот ресивер?
-// Сделайте так, чтобы он работал
 class BluetoothStateReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -22,6 +19,7 @@ class BluetoothStateReceiver : BroadcastReceiver() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+
                 BluetoothAdapter.STATE_ON -> {
                     Toast.makeText(
                         context,

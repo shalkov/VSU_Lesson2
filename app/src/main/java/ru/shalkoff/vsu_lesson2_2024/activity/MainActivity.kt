@@ -43,15 +43,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun openSecondActivity() {
         val user = User("Vladimir", 29)
-        //TODO 1
-        // Откройте SecondActivity и передайте туда объект user
+        val secondActivityIntent = Intent(this, SecondActivity::class.java)
+        secondActivityIntent.putExtra("USER_INFO_KEY", user)
+        startActivity(secondActivityIntent)
     }
 
     private fun initForegroundService() {
         val startForegroundServiceBtn = findViewById<Button>(R.id.start_foreground_service_btn)
         startForegroundServiceBtn.setOnClickListener {
-            //TODO 2
-            // Напишите код для запуска ForegroundService
+            val serviceIntent = Intent(this, ForegroundService::class.java)
+            ContextCompat.startForegroundService(this, serviceIntent)
         }
 
         val stopForegroundServiceBtn = findViewById<Button>(R.id.stop_foreground_service_btn)
